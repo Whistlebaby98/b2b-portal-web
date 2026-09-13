@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #10233f;
+  --muted: #73839a;
+  --surface: #f5f8fc;
+  --line: #e7edf4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #b8eee9;
+  color: #0e4b53;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8e3ef;
+  border-radius: 99px;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-slate;
+  }
+
+  .icon-button {
+    @apply flex h-9 w-9 items-center justify-center rounded-xl border border-line bg-white text-slate transition hover:border-cyan hover:text-cyan;
+  }
+
+  .nav-item {
+    @apply flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-[13px] font-medium text-slate-300 transition hover:bg-white/10 hover:text-white;
+  }
+
+  .nav-item.active {
+    @apply bg-cyan text-white shadow-[0_9px_22px_rgba(22,184,177,0.26)];
+  }
+
+  .tiny-pill {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold;
+  }
+}
