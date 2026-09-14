@@ -2,62 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --ink: #10233f;
-  --muted: #73839a;
-  --surface: #f5f8fc;
-  --line: #e7edf4;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100%;
-}
-
-body {
-  margin: 0;
-  background: var(--surface);
-  color: var(--ink);
-  font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-::selection {
-  background: #b8eee9;
-  color: #0e4b53;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d8e3ef;
-  border-radius: 99px;
-}
+:root { --ink: #10233f; --muted: #73839a; --surface: #f6f8fb; --line: #e7edf4; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+::selection { background: #ffd8cf; color: #7c3d31; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #d8e3ef; border-radius: 99px; }
+::-webkit-scrollbar-track { background: transparent; }
 
 @layer components {
   .panel {
     @apply rounded-2xl border border-line bg-white shadow-card;
   }
 
+  .soft-panel {
+    @apply rounded-2xl border border-line/70 bg-[#fbfcfe];
+  }
+
   .eyebrow {
-    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-slate;
+    @apply text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400;
   }
 
   .icon-button {
@@ -73,6 +40,10 @@ button {
   }
 
   .tiny-pill {
-    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold;
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-bold;
   }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
 }

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { StoreProvider } from "./components/store-provider";
 
 export const metadata: Metadata = {
-  title: "NOVA 商采云 | 企业级采购工作台",
-  description: "面向制造企业的对公采购、审批与结算工作台",
+  title: "企采云 | 企业级对公采购商城",
+  description: "面向企业客户的选品、协议价、促销与订单服务",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-CN">
-      <body>{children}</body>
+      <body><StoreProvider>{children}</StoreProvider></body>
     </html>
   );
 }
